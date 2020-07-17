@@ -25,7 +25,38 @@
       <mat-card-subtitle>nativeName: {{record.nativeName}} </mat-card-subtitle>
       <mat-card-subtitle>numericCode: {{record.numericCode}} </mat-card-subtitle>
       <mat-card-subtitle>cioc: {{record.cioc}} </mat-card-subtitle>
-
     </mat-card-header>
+
+    <mat-card-content>
+
+        <div *ngIf="record.topLevelDomain">
+            <h3>Top Level Domain</h3>
+            <mat-list *ngFor="let domain of record.topLevelDomain" role="list">
+                <mat-list-item role="listitem">{{domain}}</mat-list-item>
+            </mat-list>
+        </div>
+
+        <div *ngIf="record.callingCodes">
+            <h3>callingCodes</h3>
+            <mat-list *ngFor="let code of record.callingCodes" role="list">
+                <mat-list-item role="listitem">{{code}}</mat-list-item>
+            </mat-list>
+        </div>
+
+        <div *ngIf="record.altSpellings">
+            <h3>altSpellings</h3>
+            <mat-list *ngFor="let alt of record.altSpellings" role="list">
+                <mat-list-item role="listitem">{{alt}}</mat-list-item>
+            </mat-list>
+        </div>
+
+        <div *ngIf="record.latlng">
+            <h3>LatLng</h3>
+            <mat-list *ngFor="let lat of record.latlng" role="list">
+                <mat-list-item role="listitem">{{lat}}</mat-list-item>
+            </mat-list>
+        </div>
+
+    </mat-card-content>
   </mat-card>
 </div>
