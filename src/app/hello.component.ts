@@ -4,7 +4,7 @@ import {CountryService} from './country.service';
 @Component({
   selector: 'hello',
   templateUrl: 'hello.component.html',
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: ['hello.component.css']
 })
 export class HelloComponent implements OnInit  {
   @Input() name: string;
@@ -21,6 +21,7 @@ export class HelloComponent implements OnInit  {
   private async loadCountries(): Promise<object> {
     const response = await this.countryService.GetList();
     this.counties = (Array.isArray(response)) ? response : [];
+    this.showLoading = false;
     return null;
   }
 
