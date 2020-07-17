@@ -7,5 +7,23 @@
 <div class='container' *ngIf="showLoading == false"> 
   <h3>Countries List</h3>
   <!-- Display Country Here -->
-  
+  <mat-card *ngFor="let record of countries" class='country-card'>
+    <mat-card-header>
+      <mat-card-title>{{record.name}}</mat-card-title>
+      <mat-card-subtitle>alpha2Code: {{record.alpha2Code}}</mat-card-subtitle>
+      <mat-card-subtitle>alpha3Code: {{record.alpha3Code}}</mat-card-subtitle>
+      <mat-card-subtitle>capital: {{record.capital}} </mat-card-subtitle>
+
+      <mat-card-subtitle>region: {{record.region}} </mat-card-subtitle>
+      <mat-card-subtitle>subregion: {{record.subregion}} </mat-card-subtitle>
+      <mat-card-subtitle>population: {{record.population}} </mat-card-subtitle>
+      <mat-card-subtitle>demonym: {{record.demonym}} </mat-card-subtitle>
+
+      <mat-card-subtitle>area: {{record.area}} </mat-card-subtitle>
+      <mat-card-subtitle>gini: {{record.gini}} </mat-card-subtitle>
+      <mat-card-subtitle>nativeName: {{record.nativeName}} </mat-card-subtitle>
+      <mat-card-subtitle>numericCode: {{record.numericCode}} </mat-card-subtitle>
+
+    </mat-card-header>
+  </mat-card>
 </div>
