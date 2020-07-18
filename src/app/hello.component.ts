@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import {CountryService} from './country.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {CountryService} from './country.service';
   templateUrl: 'hello.component.html',
   styleUrls: ['hello.component.css']
 })
-export class HelloComponent implements OnInit  {
+export class HelloComponent implements OnInit, AfterViewInit  {
   @Input() name: string;
   countries = [];
   showLoading = true;
@@ -15,6 +15,9 @@ export class HelloComponent implements OnInit  {
   ) {}
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
     this.loadCountries();
   }
 
