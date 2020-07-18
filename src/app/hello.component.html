@@ -93,7 +93,7 @@
             </mat-list>
         </div>
 
-        <div >
+        <div *ngIf="record.translations">
             <h3>Translations</h3>
             <mat-list  role="list">
                 <mat-list-item role="listitem">DE: {{record.translations.de}}</mat-list-item>
@@ -107,6 +107,25 @@
                 <mat-list-item role="listitem">HR: {{record.translations.hr}}</mat-list-item>
                 <mat-list-item role="listitem">FA: {{record.translations.fa}}</mat-list-item>
                 <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+
+        <div *ngIf="record.regionalBlocs">
+            <h3>Regional Blocks</h3>
+            <mat-list  *ngFor="let bloc of record.regionalBlocs" role="list">
+                <mat-list-item role='listitem'>Acronym: {{bloc.acronym}}</mat-list-item>
+                <mat-list-item role='listitem'>Name: {{bloc.name}}</mat-list-item>
+
+                <mat-divider></mat-divider>
+                <div mat-subheader>otherAcronyms</div>
+                  <mat-list-item role='listitem' *ngFor="let other of bloc.otherAcronyms">
+                      {{other}}
+                  </mat-list-item>
+                <mat-divider></mat-divider>
+                <div mat-subheader>otherNames</div>
+                 <mat-list-item role='listitem' *ngFor="let other_n of bloc.otherNames">
+                      {{other_n}}
+                  </mat-list-item>
             </mat-list>
         </div>
 
