@@ -57,6 +57,43 @@
             </mat-list>
         </div>
 
+        <div *ngIf="record.timezones">
+            <h3>TimeZone</h3>
+            <mat-list *ngFor="let zone of record.timezones" role="list">
+                <mat-list-item role="listitem">{{zone}}</mat-list-item>
+            </mat-list>
+        </div>
+
+        <div *ngIf="record.borders">
+            <h3>Border</h3>
+            <mat-list *ngFor="let border of record.borders" role="list">
+                <mat-list-item role="listitem">{{border}}</mat-list-item>
+            </mat-list>
+        </div>
+
+      
+        <div *ngIf="record.currencies">
+            <h3>Currencies</h3>
+            <mat-list *ngFor="let curr of record.currencies" role="list">
+                <mat-list-item role="listitem">Code: {{curr.code}}</mat-list-item>
+                <mat-list-item role="listitem">Name: {{curr.name}}</mat-list-item>
+                <mat-list-item role="listitem">Symbol: {{curr.symbol}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+
+        <div *ngIf="record.languages">
+            <h3>Languages</h3>
+            <mat-list *ngFor="let lang of record.languages" role="list">
+                <mat-list-item role="listitem">iso639_1: {{lang.iso639_1}}</mat-list-item>
+                <mat-list-item role="listitem">iso639_2: {{lang.iso639_2}}</mat-list-item>
+                <mat-list-item role="listitem">Name: {{lang.name}}</mat-list-item>
+                <mat-list-item role="listitem">NativeName: {{lang.nativeName}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+
+
     </mat-card-content>
   </mat-card>
 </div>

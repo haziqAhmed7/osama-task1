@@ -18,7 +18,8 @@ export class CountryService {
     .then(data => {
         if (Array.isArray(data)) {
           data.forEach((record) => {
-            countries.push(record);
+            let temp = record;
+            countries.push(temp);
           });
         }
     })
@@ -28,7 +29,7 @@ export class CountryService {
       // const faker = new FakeData();
       // countries.push(faker.loadFakeData());
     });
-    console.log(countries);
+    console.log(countries[0]);
     return countries;
   }
 }
